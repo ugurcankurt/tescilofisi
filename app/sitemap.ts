@@ -2,14 +2,26 @@ import { createServerSupabaseClient } from '@/lib/supabase'
 import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const supabase = await createServerSupabaseClient()
+  let blogPosts: any[] = []
   
-  // Get all published blog posts
-  const { data: blogPosts } = await supabase
-    .from('blog_posts')
-    .select('slug, updated_at, published_at, created_at')
-    .eq('published', true)
-    .order('published_at', { ascending: false })
+  // Only try to fetch blog posts if Supabase is configured
+  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    try {
+      const supabase = await createServerSupabaseClient()
+      
+      // Get all published blog posts
+      const { data } = await supabase
+        .from('blog_posts')
+        .select('slug, updated_at, published_at, created_at')
+        .eq('published', true)
+        .order('published_at', { ascending: false })
+      
+      blogPosts = data || []
+    } catch (error) {
+      console.warn('Failed to fetch blog posts for sitemap:', error)
+      blogPosts = []
+    }
+  }
 
   // Base URLs
   const baseUrls: MetadataRoute.Sitemap = [
@@ -46,7 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // Blog post URLs
-  const blogUrls: MetadataRoute.Sitemap = (blogPosts || []).map((post) => ({
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `https://tescilofisi.com/blog/${post.slug}`,
     lastModified: new Date(post.updated_at),
     changeFrequency: 'monthly' as const,
