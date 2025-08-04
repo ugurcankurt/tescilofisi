@@ -10,7 +10,8 @@ import {
   FileText, 
   Plus, 
   Settings,
-  LogOut
+  LogOut,
+  MessageSquare
 } from "lucide-react"
 import { signOut } from "@/lib/auth"
 import { useRouter } from "next/navigation"
@@ -30,6 +31,11 @@ const navigation = [
     name: "Yeni Yazı",
     href: "/admin/posts/new",
     icon: Plus,
+  },
+  {
+    name: "İletişim Mesajları",
+    href: "/admin/contacts",
+    icon: MessageSquare,
   },
   {
     name: "Ayarlar",

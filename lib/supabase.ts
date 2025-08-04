@@ -54,3 +54,15 @@ export interface BlogPost {
   updated_at: string
   published_at?: string | null
 }
+
+export interface ContactForm {
+  id: string
+  name: string
+  email: string
+  phone: string
+  service: string
+  message: string
+  status: 'new' | 'read' | 'replied' | 'closed'
+  created_at: string
+  updated_at: string
+}
