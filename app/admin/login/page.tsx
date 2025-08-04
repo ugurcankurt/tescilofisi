@@ -36,7 +36,7 @@ export default function AdminLogin() {
         return
       }
 
-      if (data.user) {
+      if (data?.user) {
         console.log('Login successful, redirecting to dashboard')
         router.push("/admin/dashboard")
       } else {
