@@ -32,10 +32,7 @@ import {
   Calendar,
   User,
   ArrowRight,
-  Scale,
-  Lightbulb,
-  FileText,
-  Globe
+  Scale
 } from "lucide-react"
 
 export default async function BlogPage() {
@@ -238,112 +235,6 @@ export default async function BlogPage() {
                 <p className="text-gray-500">Henüz blog yazısı yayınlanmamış.</p>
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Categories */}
-        <section className="bg-gray-50 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Kategoriler
-              </h2>
-              <p className="text-lg text-gray-600">
-                İlgilendiğiniz konulara göre makaleleri keşfedin
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Scale className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Marka Tescil</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Marka tescil süreçleri ve rehberleri
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/blog/kategori/marka-tescil">
-                      Makaleleri Gör
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Lightbulb className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Patent Başvurusu</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Patent süreçleri ve koruma stratejileri
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/blog/kategori/patent-basvurusu">
-                      Makaleleri Gör
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FileText className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Fikri Mülkiyet</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Fikri mülkiyet hukuku ve koruma
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/blog/kategori/fikri-mulkiyet">
-                      Makaleleri Gör
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Globe className="h-6 w-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Uluslararası</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Global marka ve patent başvuruları
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/blog/kategori/uluslararasi">
-                      Makaleleri Gör
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Newsletter */}
-        <section className="bg-blue-600 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Marka Patent Güncellemelerini Kaçırmayın
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Yeni makaleler, güncel mevzuat değişiklikleri ve uzman görüşleri için bültenimize abone olun.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="E-posta adresiniz"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 border-0 focus:ring-2 focus:ring-blue-300"
-              />
-              <Button variant="secondary" size="lg">
-                Abone Ol
-              </Button>
-            </div>
           </div>
         </section>
       </div>

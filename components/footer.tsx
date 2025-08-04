@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Scale, Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -9,13 +10,17 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Scale className="h-6 w-6 text-white" />
-              </div>
+              <Image
+                src="/logo/logo.png"
+                alt="Tescilofisi Logo"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
               <span className="text-xl font-bold">Tescilofisi</span>
             </div>
             <p className="text-gray-300 text-sm">
-              Türkiye'de marka tescili, patent başvurusu ve fikri mülkiyet hukuku alanında 
+              Türkiye&apos;de marka tescili, patent başvurusu ve fikri mülkiyet hukuku alanında 
               uzman danışmanlık hizmetleri sunuyoruz.
             </p>
           </div>

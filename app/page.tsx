@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
-  Shield, 
+  Send, 
   Scale, 
   Award, 
   Users, 
@@ -23,7 +23,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="secondary" className="mb-4">
-                Türkiye'nin #1 Marka Tescil ve Patent Uzmanı
+                Türkiye&apos;nin #1 Marka Tescil ve Patent Uzmanı
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 <span className="text-blue-600">Marka Tescil</span> ve 
@@ -31,14 +31,14 @@ export default function Home() {
                 Hızlı ve Güvenilir
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                <strong>Marka tescil işlemleri</strong> ve <strong>patent başvurusu</strong> için Türkiye'nin 
+                <strong>Marka tescil işlemleri</strong> ve <strong>patent başvurusu</strong> için Türkiye&apos;nin 
                 en deneyimli ekibi. %98 başarı oranı, uygun fiyat, hızlı süreç garantisi ile 
                 <strong> marka patent</strong> haklarınızı koruyun.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild>
                   <Link href="/iletisim">
-                    <Shield className="mr-2 h-5 w-5" />
+                    <Send className="mr-2 h-5 w-5" />
                     Ücretsiz Danışmanlık Alın
                   </Link>
                 </Button>
@@ -221,7 +221,7 @@ export default function Home() {
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link href="/iletisim">
-              <Shield className="mr-2 h-5 w-5" />
+              <Send className="mr-2 h-5 w-5" />
               Hemen İletişime Geçin
             </Link>
           </Button>
