@@ -1,8 +1,15 @@
 import { createServerSupabaseClient } from '@/lib/supabase'
 import type { MetadataRoute } from 'next'
 
+type BlogPostSitemap = {
+  slug: string
+  updated_at: string
+  published_at: string | null
+  created_at: string
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  let blogPosts: any[] = []
+  let blogPosts: BlogPostSitemap[] = []
   
   // Only try to fetch blog posts if Supabase is configured
   if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
