@@ -28,7 +28,7 @@ import { StructuredData } from "@/components/structured-data"
 const contactSchema = z.object({
   name: z.string().min(2, "Ad en az 2 karakter olmalıdır"),
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
-  phone: z.string().min(11, "Geçerli bir telefon numarası giriniz"),
+  phone: z.string().min(10, "Geçerli bir telefon numarası giriniz"),
   service: z.string().min(1, "Hizmet türü seçiniz"),
   message: z.string().min(10, "Mesaj en az 10 karakter olmalıdır")
 })
@@ -53,13 +53,30 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactForm) => {
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      console.log('Form data:', data)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        console.error('API Error Response:', result)
+        const errorMessage = result.details ? 
+          `${result.error}\nDetay: ${result.details}\nKod: ${result.code || 'N/A'}` : 
+          result.error || 'Form gönderilemedi'
+        throw new Error(errorMessage)
+      }
+
+      console.log('Form başarıyla gönderildi:', result)
       setIsSubmitted(true)
       reset()
     } catch (error) {
       console.error('Form submission error:', error)
+      alert(error instanceof Error ? error.message : 'Bir hata oluştu. Lütfen tekrar deneyin.')
     }
   }
 

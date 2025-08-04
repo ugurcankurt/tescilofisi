@@ -1,6 +1,7 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { StructuredData } from "@/components/structured-data"
 import { 
@@ -24,7 +25,7 @@ export default function ServicesPage() {
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="secondary" className="mb-4">
-            Türkiye'nin En Kapsamlı Marka Patent Hizmetleri
+            Türkiye&apos;nin En Kapsamlı Marka Patent Hizmetleri
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             <span className="text-blue-600">Marka Tescil</span> ve <span className="text-blue-600">Patent Başvurusu</span> Hizmetlerimiz
@@ -44,8 +45,15 @@ export default function ServicesPage() {
           <div id="marka-tescili" className="scroll-mt-20">
             <Card className="overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="bg-blue-50 p-8 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="bg-blue-50 p-8 flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src="/images/trademark-bg.jpg"
+                    alt=""
+                    fill
+                    className="object-cover opacity-50"
+                  />
+                  <div className="absolute inset-0 bg-blue-50/70"></div>
+                  <div className="text-center relative z-10">
                     <div className="bg-blue-600 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Scale className="h-12 w-12 text-white" />
                     </div>
@@ -57,7 +65,7 @@ export default function ServicesPage() {
                     Profesyonel Marka Tescil İşlemleri
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    <strong>Marka tescil</strong> sürecinizi Türkiye'nin en deneyimli ekibi ile tamamlayın. 
+                    <strong>Marka tescil</strong> sürecinizi Türkiye&apos;nin en deneyimli ekibi ile tamamlayın. 
                     Ulusal ve uluslararası <strong>marka tescil işlemleri</strong> için güvenilir çözümler sunuyoruz. 
                     %98 başarı oranı ile <strong>marka patent</strong> haklarınızı koruyun.
                   </p>
@@ -156,8 +164,15 @@ export default function ServicesPage() {
                     </Link>
                   </Button>
                 </CardContent>
-                <div className="bg-green-50 p-8 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="bg-green-50 p-8 flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src="/images/patent-bg.jpg"
+                    alt=""
+                    fill
+                    className="object-cover opacity-50"
+                  />
+                  <div className="absolute inset-0 bg-green-50/70"></div>
+                  <div className="text-center relative z-10">
                     <div className="bg-green-600 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Lightbulb className="h-12 w-12 text-white" />
                     </div>
@@ -172,8 +187,15 @@ export default function ServicesPage() {
           <div id="tasarim-tescili" className="scroll-mt-20">
             <Card className="overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="bg-purple-50 p-8 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="bg-purple-50 p-8 flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src="/images/design-bg.jpg"
+                    alt=""
+                    fill
+                    className="object-cover opacity-50"
+                  />
+                  <div className="absolute inset-0 bg-purple-50/70"></div>
+                  <div className="text-center relative z-10">
                     <div className="bg-purple-600 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Palette className="h-12 w-12 text-white" />
                     </div>
@@ -273,8 +295,15 @@ export default function ServicesPage() {
                     </Link>
                   </Button>
                 </CardContent>
-                <div className="bg-orange-50 p-8 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="bg-orange-50 p-8 flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src="/images/legal-bg.jpg"
+                    alt=""
+                    fill
+                    className="object-cover opacity-50"
+                  />
+                  <div className="absolute inset-0 bg-orange-50/70"></div>
+                  <div className="text-center relative z-10">
                     <div className="bg-orange-600 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
                       <FileText className="h-12 w-12 text-white" />
                     </div>

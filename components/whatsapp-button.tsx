@@ -45,8 +45,8 @@ export function WhatsAppButton({
             <div className="bg-white rounded-lg shadow-lg border p-4 max-w-xs animate-in slide-in-from-right-2 duration-200">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5 text-white" />
+                  <div className="w-11 h-11 bg-green-500 rounded-full flex items-center justify-center">
+                    <MessageCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm">Tescilofisi</h4>
@@ -70,7 +70,7 @@ export function WhatsAppButton({
                 className="w-full bg-green-500 hover:bg-green-600 text-white"
                 size="sm"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
+                <MessageCircle className="w-5 h-5 mr-2" />
                 Mesaj Gönder
               </Button>
             </div>
@@ -86,7 +86,7 @@ export function WhatsAppButton({
               )}
               size="icon"
             >
-              <MessageCircle className="w-4xl h-4xl font-semibold" />
+              <MessageCircle className="!w-6 !h-6" />
             </Button>
             
             {/* Online indicator */}
@@ -100,29 +100,29 @@ export function WhatsAppButton({
         <div className="flex flex-col items-center space-y-2">
           {/* Expanded Info Card for Mobile */}
           {isExpanded && (
-            <div className="bg-white rounded-lg shadow-lg border p-3 max-w-xs mx-4 animate-in slide-in-from-bottom-2 duration-200">
+            <div className="bg-white rounded-xl shadow-xl border p-5 w-80 max-w-[90vw] mx-4 animate-in slide-in-from-bottom-2 duration-200">
               <div className="text-center">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <MessageCircle className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
+                  <MessageCircle className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="font-medium text-sm mb-1">Hemen WhatsApp&apos;la İletişime Geçin</h4>
-                <p className="text-xs text-gray-600 mb-3">
-                  Marka tescil ve patent başvurusu için uzman desteği
+                <h4 className="font-semibold text-base mb-2 text-gray-900">Hemen WhatsApp&apos;la İletişime Geçin</h4>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                  Marka tescil ve patent başvurusu için uzman desteği alın
                 </p>
-                <div className="flex space-x-2">
+                <div className="flex space-x-3">
                   <Button 
                     onClick={handleWhatsAppClick}
-                    className="flex-1 bg-green-500 hover:bg-green-600 text-white"
-                    size="sm"
+                    className="flex-1 bg-green-500 hover:bg-green-600 text-white py-3"
+                    size="default"
                   >
-                    <MessageCircle className="w-4 h-4 mr-1 font-semibold" />
-                    Mesaj
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Mesaj Gönder
                   </Button>
                   <Button
                     variant="outline"
-                    size="sm"
+                    size="default"
                     onClick={toggleExpanded}
-                    className="px-3"
+                    className="px-4 py-3"
                   >
                     <X className="w-4 h-4" />
                   </Button>
@@ -134,10 +134,10 @@ export function WhatsAppButton({
           {/* Main Mobile Button */}
           <Button
             onClick={isExpanded ? handleWhatsAppClick : toggleExpanded}
-            className="rounded-full w-14 h-14 bg-green-500 hover:bg-green-600 text-white shadow-lg"
+            className="rounded-full w-14 h-14 bg-green-500 hover:bg-green-600 text-white shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105"
             size="icon"
           >
-            <MessageCircle className="w-7 h-7 font-semibold" />
+            <MessageCircle className="!w-6 !h-6" />
           </Button>
         </div>
       </div>
