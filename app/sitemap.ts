@@ -1,6 +1,8 @@
 import { createServerSupabaseClient } from '@/lib/supabase'
 import type { MetadataRoute } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 type BlogPostSitemap = {
   slug: string
   updated_at: string
