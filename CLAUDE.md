@@ -15,6 +15,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
 
+### Database Management
+- Supabase migrations are located in `supabase/migrations/`
+- Run migrations via Supabase Dashboard SQL Editor or `supabase db push` (if CLI installed)
+- Admin users: admin@tescilofisi.com, ugurcankurt@gmail.com
+
 ## Architecture Overview
 
 This is a Next.js 15 application using the App Router pattern with TypeScript. Key architectural decisions:
@@ -52,15 +57,15 @@ This is a Next.js 15 application using the App Router pattern with TypeScript. K
 - Mobile-first responsive design patterns
 
 ### Path Aliases
-- `@/components` → `./components`
-- `@/lib` → `./lib` 
-- `@/hooks` → `./hooks`
-- `@/ui` → `./components/ui`
+- `@/*` → `./*` (configured in tsconfig.json)
+- Common paths: `@/components`, `@/lib`, `@/hooks`, `@/ui` → `./components/ui`
 
 ### Database & Authentication
 - **Supabase**: Backend-as-a-Service for database and authentication
 - Server and client-side Supabase clients configured in `lib/supabase.ts`
 - Admin dashboard with authentication for blog/content management
+- TypeScript interfaces: `BlogPost`, `ContactForm` defined in `lib/supabase.ts`
+- Row Level Security (RLS) policies: public read access, admin-only write access
 
 ### Content Management
 - Admin dashboard at `/admin` with authentication
@@ -72,3 +77,14 @@ This is a Next.js 15 application using the App Router pattern with TypeScript. K
 - SEO-optimized with structured data for organization markup
 - Turkish language support with proper meta tags and OpenGraph data
 - Mobile detection hook for responsive design decisions
+- Contact form API endpoint at `/api/contact` with email integration
+- View tracking system for blog posts (`/api/track-view`)
+- WhatsApp integration component for customer communication
+
+### Environment Configuration
+- Requires Supabase environment variables: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- Google Analytics: `NEXT_PUBLIC_GA_MEASUREMENT_ID` (GA4 format: G-XXXXXXXXXX)
+- Google Search Console: `NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE`
+- See `.env.example` for template
+- Image optimization configured for Supabase storage and tescilofisi.com domain
+- ESLint configured to ignore errors during builds (development focus)

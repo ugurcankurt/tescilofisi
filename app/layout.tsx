@@ -5,6 +5,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StructuredData } from "@/components/structured-data";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { GoogleSearchConsole } from "@/components/analytics/google-search-console";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
     canonical: "https://tescilofisi.com",
   },
   other: {
-    "google-site-verification": "your-google-verification-code",
+    "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE || "your-google-verification-code",
   },
 };
 
@@ -72,6 +74,7 @@ export default function RootLayout({
     <html lang="tr">
       <head>
         <StructuredData type="organization" />
+        <GoogleSearchConsole verificationCode={process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE || ""} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -85,6 +88,7 @@ export default function RootLayout({
           phoneNumber="905551234567"
           message="Merhaba! Tescilofisi'nden marka tescil ve patent başvurusu hakkında bilgi almak istiyorum."
         />
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
       </body>
     </html>
   );
