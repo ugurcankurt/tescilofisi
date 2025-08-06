@@ -19,7 +19,7 @@ export default function Home() {
     <div className="font-sans">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-right bg-no-repeat opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-top bg-no-repeat opacity-30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

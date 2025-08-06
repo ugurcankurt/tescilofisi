@@ -13,7 +13,8 @@ import {
   Clock,
   Globe,
   Shield,
-  ArrowRight
+  ArrowRight,
+  Send
 } from "lucide-react"
 
 export default function ServicesPage() {
@@ -328,7 +329,7 @@ export default function ServicesPage() {
           </p>
           <Button size="lg" asChild>
             <Link href="/iletisim">
-              <Shield className="mr-2 h-5 w-5" />
+              <Send className="mr-2 h-5 w-5" />
               Ücretsiz Danışmanlık Alın
             </Link>
           </Button>

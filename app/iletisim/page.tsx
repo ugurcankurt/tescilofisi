@@ -141,7 +141,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">Telefon</p>
-                        <p className="text-gray-600">0(212) 909 2657</p>
+                        <a href="tel:+902129092657" className="text-gray-600 hover:text-blue-600 transition-colors">
+                          0(212) 909 2657
+                        </a>
                       </div>
                     </div>
 
@@ -151,7 +153,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">E-posta</p>
-                        <p className="text-gray-600">info@tescilofisi.com</p>
+                        <a href="mailto:info@tescilofisi.com" className="text-gray-600 hover:text-green-600 transition-colors">
+                          info@tescilofisi.com
+                        </a>
                       </div>
                     </div>
 
