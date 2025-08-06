@@ -59,8 +59,13 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <Button asChild size="sm" className="text-xs px-2 py-1 h-8">
+              <a href="tel:+902129092657">
+                <Phone className="mr-1 h-3 w-3" />
+                Ücretsiz Danışmanlık
+              </a>
+            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -101,16 +106,6 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <hr className="my-3 border-gray-200" />
-            <div className="px-4">
-              <p className="text-sm text-gray-600 mb-3">Hemen başlayın</p>
-              <Button asChild className="w-full">
-                <a href="tel:+902129092657" onClick={() => setMobileMenuOpen(false)}>
-                  <Phone className="mr-2 h-4 w-4" />
-                  Ücretsiz Danışmanlık
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </nav>
