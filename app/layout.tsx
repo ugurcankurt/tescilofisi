@@ -85,8 +85,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton 
-          phoneNumber="905551234567"
-          message="Merhaba! Tescilofisi'nden marka tescil ve patent başvurusu hakkında bilgi almak istiyorum."
+          phoneNumber="902129092657"
+          message="Merhaba! Marka tescil ve patent başvurusu hakkında bilgi almak istiyorum."
         />
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
       </body>

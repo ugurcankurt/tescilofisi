@@ -88,3 +88,17 @@ This is a Next.js 15 application using the App Router pattern with TypeScript. K
 - See `.env.example` for template
 - Image optimization configured for Supabase storage and tescilofisi.com domain
 - ESLint configured to ignore errors during builds (development focus)
+
+## Testing and Quality Assurance
+
+This project currently does not have automated tests configured. When implementing new features:
+- Use TypeScript for type safety
+- Follow existing component patterns in `components/ui/`
+- Test manually in development mode using `npm run dev`
+- Run `npm run build` to catch TypeScript errors and ensure production readiness
+- Use `npm run lint` for code quality checks
+
+## API Endpoints
+
+- `/api/contact` - Handles contact form submissions with email integration
+- `/api/track-view` - Tracks blog post view counts (anonymous tracking enabled)

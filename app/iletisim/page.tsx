@@ -43,13 +43,10 @@ export default function ContactPage() {
     handleSubmit,
     formState: { errors, isSubmitting },
     setValue,
-    watch,
     reset
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema)
   })
-
-  const watchService = watch("service")
 
   const onSubmit = async (data: ContactForm) => {
     try {
@@ -144,7 +141,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">Telefon</p>
-                        <p className="text-gray-600">+90 (212) 555 0123</p>
+                        <p className="text-gray-600">0(212) 909 2657</p>
                       </div>
                     </div>
 
@@ -154,7 +151,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">E-posta</p>
-                        <p className="text-gray-600">info@ugurpatent.com</p>
+                        <p className="text-gray-600">info@tescilofisi.com</p>
                       </div>
                     </div>
 
@@ -165,9 +162,9 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium">Adres</p>
                         <p className="text-gray-600">
-                          Maslak Mahallesi<br />
-                          Büyükdere Caddesi No: 123<br />
-                          Sarıyer, İstanbul
+                          Cumhuriyet Mahallesi<br />
+                          Şebboy Sok. No: 15/1<br />
+                          Küçükçekmece, İstanbul
                         </p>
                       </div>
                     </div>
@@ -245,7 +242,7 @@ export default function ContactPage() {
                           id="phone"
                           {...register("phone")}
                           className="mt-1"
-                          placeholder="0532 123 45 67"
+                          placeholder="Telefon numaranız"
                         />
                         {errors.phone && (
                           <p className="text-red-600 text-sm mt-1">{errors.phone.message}</p>
@@ -260,7 +257,7 @@ export default function ContactPage() {
                         type="email"
                         {...register("email")}
                         className="mt-1"
-                        placeholder="ornek@email.com"
+                        placeholder="Email adresiniz"
                       />
                       {errors.email && (
                         <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>

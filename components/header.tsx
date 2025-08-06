@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Send } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
@@ -52,10 +52,10 @@ export function Header() {
 
           <div className="hidden md:block">
             <Button asChild>
-              <Link href="/iletisim">
-                <Send className="mr-2 h-4 w-4" />
+              <a href="tel:+902129092657">
+                <Phone className="mr-2 h-4 w-4" />
                 Ücretsiz Danışmanlık
-              </Link>
+              </a>
             </Button>
           </div>
 
@@ -105,10 +105,10 @@ export function Header() {
             <div className="px-4">
               <p className="text-sm text-gray-600 mb-3">Hemen başlayın</p>
               <Button asChild className="w-full">
-                <Link href="/iletisim" onClick={() => setMobileMenuOpen(false)}>
-                  <Send className="mr-2 h-4 w-4" />
+                <a href="tel:+902129092657" onClick={() => setMobileMenuOpen(false)}>
+                  <Phone className="mr-2 h-4 w-4" />
                   Ücretsiz Danışmanlık
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

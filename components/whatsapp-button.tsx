@@ -11,7 +11,7 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({ 
-  phoneNumber = "905551234567", // Varsayılan numara - gerçek numarayla değiştirin
+  phoneNumber = "902129092657",
   message = "Merhaba! Marka tescil ve patent başvurusu hakkında bilgi almak istiyorum."
 }: WhatsAppButtonProps) {
   const [isExpanded, setIsExpanded] = useState(false)

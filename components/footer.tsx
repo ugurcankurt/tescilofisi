@@ -80,7 +80,7 @@ export function Footer() {
             <div className="space-y-2 text-gray-300">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+90 (212) 555 0123</span>
+                <span>0(212) 909 2657</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Tescilofisi. Tüm hakları saklıdır.
+            © 2025 Tescilofisi. Tüm hakları saklıdır.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <Link href="/gizlilik" className="text-gray-400 hover:text-white text-sm transition-colors">
