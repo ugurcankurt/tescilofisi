@@ -26,15 +26,15 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           "logo": "https://tescilofisi.com/logo.png",
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+90-212-555-0123",
+            "telephone": "+90-212-909-2657",
             "contactType": "customer service",
             "availableLanguage": "Turkish",
             "areaServed": "TR"
           },
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Maslak Mahallesi Büyükdere Caddesi No: 123",
-            "addressLocality": "Sarıyer",
+            "streetAddress": "Cumhuriyet mah. Şebboy sok. No:15/1",
+            "addressLocality": "Küçükçekmece",
             "addressRegion": "İstanbul",
             "addressCountry": "TR"
           },
