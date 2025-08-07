@@ -9,15 +9,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center">
               <Image
                 src="/logo/logo.png"
                 alt="Tescilofisi Logo"
-                width={40}
-                height={40}
-                className="rounded-lg"
-              />
-              <span className="text-xl font-bold">Tescilofisi</span>
+                width={180}
+                height={48}
+                className="h-14 w-auto sm:h-14"
+                />
             </div>
             <p className="text-gray-300 text-sm">
               Türkiye&apos;de marka tescili, patent başvurusu ve fikri mülkiyet hukuku alanında 

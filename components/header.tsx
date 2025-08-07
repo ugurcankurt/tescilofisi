@@ -23,15 +23,14 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-8" aria-label="Ana navigasyon">
         <div className="flex h-14 sm:h-16 justify-between items-center">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/logo/logo.png"
                 alt="Tescilofisi Logo"
-                width={32}
-                height={32}
-                className="rounded-lg sm:w-10 sm:h-10"
+                width={180}
+                height={48}
+                className="h-8 w-auto sm:h-12"
               />
-              <span className="text-lg sm:text-xl font-bold text-gray-900">Tescilofisi</span>
             </Link>
           </div>
 
@@ -51,7 +50,7 @@ export function Header() {
           </div>
 
           <div className="hidden md:block">
-            <Button asChild>
+            <Button asChild className="bg-blue-600 hover:bg-blue-700">
               <a href="tel:+902129092657">
                 <Phone className="mr-2 h-4 w-4" />
                 Ücretsiz Danışmanlık
@@ -60,7 +59,7 @@ export function Header() {
           </div>
 
           <div className="md:hidden flex items-center space-x-2">
-            <Button asChild size="sm" className="text-xs px-2 py-1 h-8">
+            <Button asChild size="sm" className="text-xs px-2 py-1 h-8 bg-blue-600 hover:bg-blue-700">
               <a href="tel:+902129092657">
                 <Phone className="mr-1 h-3 w-3" />
                 Ücretsiz Danışmanlık

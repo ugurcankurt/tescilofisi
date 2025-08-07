@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StructuredData } from "@/components/structured-data";
-import { WhatsAppButton } from "@/components/whatsapp-button";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { GoogleSearchConsole } from "@/components/analytics/google-search-console";
 
@@ -84,10 +83,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <WhatsAppButton 
-          phoneNumber="902129092657"
-          message="Merhaba! Marka tescil ve patent başvurusu hakkında bilgi almak istiyorum."
-        />
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
       </body>
     </html>

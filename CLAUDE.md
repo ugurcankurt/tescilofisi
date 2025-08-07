@@ -11,9 +11,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 - `npm run dev` - Start development server with Turbopack (opens at http://localhost:3000)
-- `npm run build` - Build for production
+- `npm run build` - Build for production (includes TypeScript checking)
 - `npm start` - Start production server
-- `npm run lint` - Run ESLint
+- `npm run lint` - Run ESLint (configured to ignore errors during builds)
 
 ### Database Management
 - Supabase migrations are located in `supabase/migrations/`
@@ -22,7 +22,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is a Next.js 15 application using the App Router pattern with TypeScript. Key architectural decisions:
+This is a Next.js 15 application using the App Router pattern with TypeScript, built for Turkish trademark and patent consultation business. Key architectural decisions:
+
+### Build & Performance Optimizations
+- **Turbopack**: Fast refresh development server for improved DX
+- **React 19**: Latest React with concurrent features
+- **TypeScript 5**: Strict mode with ES2017 target for optimal compatibility
+- **Image optimization**: Next.js Image component with remote patterns configured
+- **Bundle optimization**: Tree-shaking and automatic code splitting
 
 ### UI Framework
 - **shadcn/ui**: Complete component library built on Radix UI primitives
@@ -56,16 +63,21 @@ This is a Next.js 15 application using the App Router pattern with TypeScript. K
 - Component variants defined using CVA
 - Mobile-first responsive design patterns
 
-### Path Aliases
+### Path Aliases & Configuration
 - `@/*` → `./*` (configured in tsconfig.json)
+- **shadcn/ui config**: New York style, RSC enabled, CSS variables, neutral base color
 - Common paths: `@/components`, `@/lib`, `@/hooks`, `@/ui` → `./components/ui`
+- **Component aliases**: Configured in `components.json` for shadcn/ui CLI
 
 ### Database & Authentication
 - **Supabase**: Backend-as-a-Service for database and authentication
-- Server and client-side Supabase clients configured in `lib/supabase.ts`
-- Admin dashboard with authentication for blog/content management
-- TypeScript interfaces: `BlogPost`, `ContactForm` defined in `lib/supabase.ts`
-- Row Level Security (RLS) policies: public read access, admin-only write access
+- **Client configuration**: Server and client-side Supabase clients in `lib/supabase.ts`
+- **Schema**: `blog_posts` (id, title, content, slug, published, created_at, updated_at, views)
+- **Schema**: `contact_forms` (id, name, email, phone, service, message, created_at)
+- **Authentication**: Session-based with admin role checking (`admin@tescilofisi.com`, `ugurcankurt@gmail.com`)
+- **RLS policies**: Public read access, admin-only write access
+- **Service role**: Bypasses RLS for server-side admin operations
+- **TypeScript interfaces**: `BlogPost`, `ContactForm` with auto-generated timestamps
 
 ### Content Management
 - Admin dashboard at `/admin` with authentication
@@ -82,12 +94,12 @@ This is a Next.js 15 application using the App Router pattern with TypeScript. K
 - WhatsApp integration component for customer communication
 
 ### Environment Configuration
-- Requires Supabase environment variables: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- Google Analytics: `NEXT_PUBLIC_GA_MEASUREMENT_ID` (GA4 format: G-XXXXXXXXXX)
-- Google Search Console: `NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE`
-- See `.env.example` for template
-- Image optimization configured for Supabase storage and tescilofisi.com domain
-- ESLint configured to ignore errors during builds (development focus)
+- **Required Supabase variables**: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- **Service role key**: `SUPABASE_SERVICE_ROLE_KEY` (bypasses RLS for admin operations)
+- **Admin configuration**: `NEXT_PUBLIC_ADMIN_EMAIL` (defaults to admin@tescilofisi.com)
+- **Analytics**: `NEXT_PUBLIC_GA_MEASUREMENT_ID` (GA4 format), `NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE`
+- **Image optimization**: Configured for Supabase storage (`nintlbgwbrzkvrynathe.supabase.co`) and tescilofisi.com domain
+- **Build configuration**: ESLint ignores errors during builds (development-focused approach)
 
 ## Testing and Quality Assurance
 
@@ -100,5 +112,11 @@ This project currently does not have automated tests configured. When implementi
 
 ## API Endpoints
 
-- `/api/contact` - Handles contact form submissions with email integration
-- `/api/track-view` - Tracks blog post view counts (anonymous tracking enabled)
+- `/api/contact` - Contact form submissions with Zod validation and email integration
+- `/api/track-view` - Anonymous blog post view tracking with increment counter
+
+### API Patterns
+- **Validation**: Zod schemas for request validation
+- **Error handling**: Structured Turkish error responses
+- **Database access**: Service role key for bypassing RLS policies
+- **Security**: Input sanitization and CSRF protection through Next.js
