@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -16,6 +17,21 @@ import {
   ArrowRight,
   Send
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Marka Tescil ve Patent Başvurusu Hizmetleri | Tescilofisi",
+  description: "Kapsamlı marka tescil işlemleri, patent başvurusu, tasarım tescili ve fikri mülkiyet danışmanlığı. Uzman ekip, hızlı süreç, %98 başarı oranı ile marka patent hizmetleri.",
+  keywords: "marka tescil hizmetleri, patent başvuru hizmetleri, tasarım tescili, fikri mülkiyet danışmanlığı, marka patent hizmetleri, turkpatent başvuru, marka araştırma",
+  openGraph: {
+    title: "Marka Tescil ve Patent Başvurusu Hizmetleri | Tescilofisi",
+    description: "Kapsamlı marka tescil işlemleri, patent başvurusu, tasarım tescili ve fikri mülkiyet danışmanlığı. Uzman ekip ile güvenilir hizmet.",
+    url: "https://tescilofisi.com/hizmetler",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://tescilofisi.com/hizmetler",
+  },
+}
 
 export default function ServicesPage() {
   return (
@@ -49,7 +65,7 @@ export default function ServicesPage() {
                 <div className="bg-blue-50 p-8 flex items-center justify-center relative overflow-hidden">
                   <Image
                     src="/images/trademark-bg.jpg"
-                    alt=""
+                    alt="Marka tescil işlemleri ve hizmetleri görseli"
                     fill
                     className="object-cover opacity-50"
                   />
@@ -168,7 +184,7 @@ export default function ServicesPage() {
                 <div className="bg-green-50 p-8 flex items-center justify-center relative overflow-hidden">
                   <Image
                     src="/images/patent-bg.jpg"
-                    alt=""
+                    alt="Patent başvurusu ve buluş koruma hizmetleri görseli"
                     fill
                     className="object-cover opacity-50"
                   />
@@ -191,7 +207,7 @@ export default function ServicesPage() {
                 <div className="bg-purple-50 p-8 flex items-center justify-center relative overflow-hidden">
                   <Image
                     src="/images/design-bg.jpg"
-                    alt=""
+                    alt="Endüstriyel tasarım tescili ve koruma hizmetleri görseli"
                     fill
                     className="object-cover opacity-50"
                   />
@@ -299,7 +315,7 @@ export default function ServicesPage() {
                 <div className="bg-orange-50 p-8 flex items-center justify-center relative overflow-hidden">
                   <Image
                     src="/images/legal-bg.jpg"
-                    alt=""
+                    alt="Fikri mülkiyet hukuku danışmanlık hizmetleri görseli"
                     fill
                     className="object-cover opacity-50"
                   />

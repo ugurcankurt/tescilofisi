@@ -114,7 +114,7 @@ export default function ContactPage() {
             Size Nasıl Yardımcı Olabiliriz?
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            İletişime Geçin
+            Marka Tescil ve Patent Danışmanlığı İletişim
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Fikri mülkiyet haklarınızla ilgili sorularınız için bizimle iletişime geçin. 

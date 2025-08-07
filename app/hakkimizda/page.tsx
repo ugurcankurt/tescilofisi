@@ -1,6 +1,7 @@
 import Link from "next/link"
+import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
   Award, 
@@ -9,12 +10,26 @@ import {
   Target,
   Eye,
   Heart,
-  Scale,
   Globe,
   Briefcase,
   Clock,
   Shield
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Hakkımızda - Tescilofisi | Marka Tescil ve Patent Uzmanları",
+  description: "Türkiye'de fikri mülkiyet alanında öncü danışmanlık firması. 10+ yıl deneyim, 500+ başarılı marka tescili, 200+ patent başvurusu. Uzman kadro ile güvenilir hizmet.",
+  keywords: "tescilofisi hakkında, marka tescil uzmanları, patent vekilleri, fikri mülkiyet danışmanları, türkiye patent uzmanları, marka tescil firması",
+  openGraph: {
+    title: "Hakkımızda - Tescilofisi | Marka Tescil ve Patent Uzmanları",
+    description: "Türkiye'de fikri mülkiyet alanında öncü danışmanlık firması. 10+ yıl deneyim, 500+ başarılı marka tescili, 200+ patent başvurusu.",
+    url: "https://tescilofisi.com/hakkimizda",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://tescilofisi.com/hakkimizda",
+  },
+}
 
 export default function AboutPage() {
   return (
@@ -26,10 +41,10 @@ export default function AboutPage() {
             Deneyim ve Güvenilirlik
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Tescilofisi Hakkında
+            Türkiye&apos;nin Güvenilir Marka Tescil ve Patent Uzmanları
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Türkiye'de fikri mülkiyet alanında öncü bir danışmanlık firması olarak, 
+            Türkiye&apos;de fikri mülkiyet alanında öncü bir danışmanlık firması olarak, 
             müşterilerimizin haklarını korumak için çalışıyoruz.
           </p>
         </div>
@@ -44,7 +59,7 @@ export default function AboutPage() {
                 Fikri Mülkiyet Alanında Güvenilir Ortağınız
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Tescilofisi, Türkiye'de marka tescili, patent başvurusu ve fikri mülkiyet 
+                Tescilofisi, Türkiye&apos;de marka tescili, patent başvurusu ve fikri mülkiyet 
                 hukuku alanında uzmanlaşmış bir danışmanlık firmasıdır. Yılların deneyimi 
                 ile şirketlerin ve girişimcilerin fikri mülkiyet haklarını koruma konusunda 
                 güvenilir çözümler sunmaktayız.
@@ -95,7 +110,7 @@ export default function AboutPage() {
               Misyon, Vizyon ve Değerlerimiz
             </h2>
             <p className="text-xl text-gray-600">
-              Fikri mülkiyet alanında Türkiye'nin önde gelen danışmanlık firması olma yolunda
+              Fikri mülkiyet alanında Türkiye&apos;nin önde gelen danışmanlık firması olma yolunda
             </p>
           </div>
 
@@ -117,7 +132,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Vizyonumuz</h3>
               <p className="text-gray-600">
-                Türkiye'de fikri mülkiyet alanında öncü, güvenilir ve yenilikçi 
+                Türkiye&apos;de fikri mülkiyet alanında öncü, güvenilir ve yenilikçi 
                 çözümler sunan lider danışmanlık firması olmak.
               </p>
             </Card>
@@ -141,7 +156,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Neden Tescilofisi'ni Tercih Etmelisiniz?
+              Neden Tescilofisi&apos;ni Tercih Etmelisiniz?
             </h2>
             <p className="text-xl text-gray-600">
               Rakiplerimizden bizi ayıran özellikler ve avantajlarımız

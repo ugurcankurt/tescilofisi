@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tescilofisi.com'),
   title: "Marka Tescil ve Patent Başvurusu | Tescilofisi - Türkiye'nin Güvenilir Marka Patent Danışmanı",
-  description: "⭐ Marka tescil işlemleri, patent başvurusu ve fikri mülkiyet danışmanlığı. ✓ Hızlı süreç ✓ Uygun fiyat ✓ %98 başarı oranı. Marka patent uzmanları ile çalışın!",
+  description: "Marka tescil işlemleri, patent başvurusu ve fikri mülkiyet danışmanlığı. ✓ Hızlı süreç ✓ Uygun fiyat ✓ %98 başarı oranı. Marka patent uzmanları ile çalışın!",
   keywords: "marka tescil, marka tescili, patent başvurusu, marka patent, fikri mülkiyet, patent danışmanlığı, marka danışmanlığı, turkpatent, patent vekili, marka araştırması, patent araştırması, istanbul marka tescil, türkiye patent, marka koruma, patent koruma, endüstriyel tasarım, faydalı model, trademark registration turkey, tescilofisi",
   authors: [{ name: "Tescilofisi" }],
   robots: {
