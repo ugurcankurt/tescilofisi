@@ -1,0 +1,20 @@
+{
+  "name": "Tescilofisi - Marka Tescil ve Patent Başvurusu",
+  "short_name": "Tescilofisi",
+  "description": "Türkiye'de marka tescil işlemleri, patent başvurusu ve fikri mülkiyet danışmanlığı",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "lang": "tr"
+}

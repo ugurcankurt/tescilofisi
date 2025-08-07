@@ -59,6 +59,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://tescilofisi.com",
   },
+  icons: {
+    icon: '/logo/logo.png',
+    shortcut: '/logo/logo.png',
+    apple: '/logo/logo.png',
+  },
+  manifest: '/site.webmanifest',
   other: {
     "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE || "your-google-verification-code",
   },
