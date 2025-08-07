@@ -121,19 +121,29 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": article.title,
     "description": article.excerpt || "",
     "image": article.featured_image ? {
       "@type": "ImageObject",
       "url": article.featured_image,
       "width": 1200,
-      "height": 630
-    } : undefined,
+      "height": 630,
+      "caption": article.title
+    } : {
+      "@type": "ImageObject",
+      "url": "https://tescilofisi.com/logo/logo.png",
+      "width": 512,
+      "height": 512
+    },
     "author": {
       "@type": "Organization",
       "name": article.author,
-      "url": "https://tescilofisi.com/hakkimizda"
+      "url": "https://tescilofisi.com/hakkimizda",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tescilofisi.com/logo/logo.png"
+      }
     },
     "publisher": {
       "@type": "Organization",
@@ -141,9 +151,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
       "url": "https://tescilofisi.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://tescilofisi.com/logo.png",
-        "width": 200,
-        "height": 60
+        "url": "https://tescilofisi.com/logo/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90-212-909-2657",
+        "contactType": "customer service",
+        "availableLanguage": "Turkish"
       }
     },
     "datePublished": article.published_at || article.created_at,
@@ -152,18 +168,39 @@ export default async function BlogPost({ params }: BlogPostProps) {
       "@type": "WebPage",
       "@id": `https://tescilofisi.com/blog/${slug}`
     },
-    "keywords": article.tags?.join(", ") || "",
+    "url": `https://tescilofisi.com/blog/${slug}`,
+    "keywords": article.tags?.join(", ") || "marka tescil, patent başvurusu, fikri mülkiyet",
     "articleSection": article.category,
+    "articleBody": article.content.replace(/<[^>]*>/g, ''),
     "wordCount": article.content.replace(/<[^>]*>/g, '').split(/\s+/).length,
+    "timeRequired": `PT${Math.ceil(article.content.replace(/<[^>]*>/g, '').split(/\s+/).length / 200)}M`,
     "inLanguage": "tr-TR",
     "isAccessibleForFree": true,
+    "genre": "Fikri Mülkiyet Danışmanlık",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Girişimciler, Şirket sahipleri, mücitler"
+    },
     "about": {
       "@type": "Thing",
       "name": "Marka Tescil ve Patent Başvurusu",
+      "description": "Fikri mülkiyet haklarının korunması",
       "sameAs": [
         "https://www.turkpatent.gov.tr/",
         "https://tescilofisi.com/hizmetler"
       ]
+    },
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "TURKPATENT",
+        "url": "https://www.turkpatent.gov.tr/"
+      }
+    ],
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "Tescilofisi Blog",
+      "url": "https://tescilofisi.com/blog"
     }
   }
 

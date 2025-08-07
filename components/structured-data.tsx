@@ -1,9 +1,19 @@
-interface StructuredDataProps {
-  type: 'organization' | 'service' | 'article' | 'faq'
-  data?: Record<string, unknown>
+interface BlogPost {
+  title: string
+  slug: string
+  author: string
+  published_at?: string
+  created_at: string
 }
 
-export function StructuredData({ type }: StructuredDataProps) {
+interface StructuredDataProps {
+  type: 'organization' | 'service' | 'article' | 'faq' | 'blog' | 'blogPosting'
+  data?: {
+    posts?: BlogPost[]
+  }
+}
+
+export function StructuredData({ type, data }: StructuredDataProps) {
   const getStructuredData = () => {
     switch (type) {
       case 'organization':
@@ -111,6 +121,91 @@ export function StructuredData({ type }: StructuredDataProps) {
               }
             }
           ]
+        }
+
+      case 'blog':
+        const blogData: Record<string, unknown> = {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Marka Tescil ve Patent Blog - Tescilofisi",
+          "description": "Marka tescil işlemleri, patent başvurusu ve fikri mülkiyet konularında güncel bilgiler, rehberler ve uzman görüşleri.",
+          "url": "https://tescilofisi.com/blog",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tescilofisi.com/blog"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@name": "Tescilofisi",
+            "@url": "https://tescilofisi.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://tescilofisi.com/logo/logo.png",
+              "width": 512,
+              "height": 512
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+90-212-909-2657",
+              "contactType": "customer service",
+              "availableLanguage": "Turkish"
+            }
+          },
+          "inLanguage": "tr-TR",
+          "keywords": ["marka tescil", "patent başvurusu", "fikri mülkiyet", "marka patent", "tescil rehberi"],
+          "about": {
+            "@type": "Thing",
+            "name": "Marka Tescil ve Patent Başvurusu",
+            "sameAs": [
+              "https://www.turkpatent.gov.tr/",
+              "https://tescilofisi.com/hizmetler"
+            ]
+          }
+        }
+        
+        // Add blog posts if provided
+        if (data?.posts && Array.isArray(data.posts)) {
+          blogData["blogPost"] = data.posts.map((post: BlogPost) => ({
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "url": `https://tescilofisi.com/blog/${post.slug}`,
+            "datePublished": post.published_at || post.created_at,
+            "author": {
+              "@type": "Organization",
+              "name": post.author
+            }
+          }))
+        }
+        
+        return blogData
+
+      case 'article':
+        return {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Marka Tescil ve Patent Makaleleri",
+          "description": "Fikri mülkiyet konularında güncel makaleler ve rehberler",
+          "author": {
+            "@type": "Organization",
+            "name": "Tescilofisi",
+            "url": "https://tescilofisi.com/hakkimizda"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Tescilofisi",
+            "url": "https://tescilofisi.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://tescilofisi.com/logo/logo.png",
+              "width": 512,
+              "height": 512
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tescilofisi.com/blog"
+          },
+          "inLanguage": "tr-TR"
         }
 
       default:

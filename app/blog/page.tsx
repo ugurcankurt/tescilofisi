@@ -67,7 +67,7 @@ export default async function BlogPage() {
 
   return (
     <>
-      <StructuredData type="article" />
+      <StructuredData type="blog" data={{ posts }} />
       <div className="font-sans">
         {/* Header */}
         <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
