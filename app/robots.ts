@@ -47,11 +47,9 @@ export default function robots(): MetadataRoute.Robots {
           '/admin/*',
           '/api/',
           '/api/*'
-        ],
-        crawlDelay: 1
+        ]
       }
     ],
-    sitemap: 'https://tescilofisi.com/sitemap.xml',
-    host: 'https://tescilofisi.com'
+    sitemap: 'https://tescilofisi.com/sitemap.xml'
   }
 }
